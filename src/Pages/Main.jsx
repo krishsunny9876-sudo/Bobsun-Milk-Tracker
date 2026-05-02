@@ -81,6 +81,7 @@ export default function Main() {
         </div>
 
         <div className='bundleGrid' style={{
+         
           display: "flex", flexDirection: "row", flexWrap: "wrap",
           justifyContent: "center", overflowY: "auto"
         }}>
