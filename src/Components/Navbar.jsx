@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom'
 import Logo from '../assets/Logo'
 
 export default function Navbar() {
+
   return (
     <nav className='navbar'>
       <div style={{ width: "200px", height: "50px", display: "flex", alignItems: "center", boxSizing: "border-box" }}>
