@@ -15,11 +15,8 @@ export default function CreateBundle({
 
     return (
         <div className='modalOverlay'>
-
             <div className='modalBox'>
-
                 <h2>Create New Bundle</h2>
-
                 <input
                     type='text'
                     placeholder='Enter bundle name'
@@ -45,11 +42,8 @@ export default function CreateBundle({
                     >
                         Create Bundle
                     </button>
-
                 </div>
-
             </div>
-
         </div>
     )
 }
