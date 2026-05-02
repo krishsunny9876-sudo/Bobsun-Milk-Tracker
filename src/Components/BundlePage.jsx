@@ -115,7 +115,7 @@ export default function BundlePage({
 
                     <input
                         type='number'
-                        placeholder='Quantity'
+                        placeholder='Quantity (For eg: 1)'
                         value={quantity}
                         ref={inputRef}
                         onChange={(e) =>
