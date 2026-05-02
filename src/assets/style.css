@@ -13,6 +13,7 @@
 body {
     background-image: url(../imgs/Home\ Img.avif);
     background-size: cover;
+    overflow-y: scroll;
 }
 
 .title {
