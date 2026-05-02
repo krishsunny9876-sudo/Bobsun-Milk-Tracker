@@ -5,7 +5,7 @@ import App from './App'
 import './assets/style.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <BrowserRouter>
+  <BrowserRouter basename='/Bobsun-Milk-Tracker'>
     <App />
   </BrowserRouter>
 )
