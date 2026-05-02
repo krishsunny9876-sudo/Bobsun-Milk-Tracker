@@ -204,7 +204,7 @@ table th {
 }
 
 .MainBG {
-    position: fixed;
+    /* position: fixed; */
     min-width: 100vw;
     height: 100vh;
     background: linear-gradient(to bottom, rgb(182, 255, 210), rgb(0, 255, 98))
