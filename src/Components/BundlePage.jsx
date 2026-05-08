@@ -106,9 +106,9 @@ export default function BundlePage({
                 <div className='entryInputs'>
 
                     <input
-                        type='text'
+                        type="number"
                         placeholder='Price Of 1L Milk'
-                        value={price}
+                        value={price ? price : 0}
                         onChange={(e) => { setPrice(e.target.value) }
                         }
                     />
