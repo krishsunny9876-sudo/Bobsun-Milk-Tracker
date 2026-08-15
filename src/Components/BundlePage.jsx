@@ -195,7 +195,7 @@ export default function BundlePage({
                                         <td>
                                             <button
                                                 className='editBtn'
-                                                style={{margin:"5px"}}
+                                                style={{ margin: "5px" }}
                                                 onClick={() => { setEditObj(data) }
                                                 }
                                             >
@@ -203,7 +203,7 @@ export default function BundlePage({
                                             </button>
                                             <button
                                                 className='deleteBtn'
-                                                style={{margin:"5px"}}
+                                                style={{ margin: "5px" }}
                                                 onClick={() =>
                                                     deleteEntry(index)
                                                 }
