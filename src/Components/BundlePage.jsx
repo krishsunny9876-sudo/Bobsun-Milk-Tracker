@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
+import EditPanel from './EditPanel';
 
 export default function BundlePage({
     bundleName,
@@ -10,6 +11,7 @@ export default function BundlePage({
     const [price, setPrice] = useState(localStorage.getItem(`milkprice${bundleName}`) ? localStorage.getItem(`milkprice${bundleName}`) : '');
     const [quantity, setQuantity] = useState('')
     const [sellerName, setSellerName] = useState('')
+    const [editObj, setEditObj] = useState(null)
 
     const inputRef = useRef()
 
@@ -32,6 +34,7 @@ export default function BundlePage({
             `${today.getDate()}/${today.getMonth() + 1}/${today.getFullYear()}`
 
         const newEntry = {
+            id: Date.now(),
             quantity,
             sellerName,
             date: formattedDate
@@ -65,6 +68,26 @@ export default function BundlePage({
         })
     }
 
+    function editEntry(id, editedEntry) {
+        console.log(id, editedEntry)
+
+        const updatedBundle = bundleData.map((entry) => {
+            if (entry.id === id) {
+                return (editedEntry);
+            }
+            else {
+                return entry
+            }
+        })
+
+        setBundles({
+            ...bundles,
+            [bundleName]: updatedBundle
+        })
+
+        setEditObj(null)
+    }
+
     useEffect(() => {
         localStorage.setItem(
             `milkprice${bundleName}`,
@@ -74,6 +97,7 @@ export default function BundlePage({
 
     return (
         <div className='MainBG'>
+            <EditPanel editEntry={editEntry} obj={editObj} setObj={setEditObj} />
             <div className='bundlePage'>
 
                 <button
@@ -151,7 +175,7 @@ export default function BundlePage({
                                 <th>Quantity</th>
                                 <th>Seller</th>
                                 <th>Date</th>
-                                <th>Delete</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
 
@@ -170,7 +194,16 @@ export default function BundlePage({
                                         <td>{data.date}</td>
                                         <td>
                                             <button
+                                                className='editBtn'
+                                                style={{margin:"5px"}}
+                                                onClick={() => { setEditObj(data) }
+                                                }
+                                            >
+                                                Edit
+                                            </button>
+                                            <button
                                                 className='deleteBtn'
+                                                style={{margin:"5px"}}
                                                 onClick={() =>
                                                     deleteEntry(index)
                                                 }
